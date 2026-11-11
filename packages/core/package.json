@@ -31,40 +31,47 @@
   },
   "imports": {
     "#sqlite": {
+      "web": "./src/database/sqlite.web.ts",
       "workerd": "./src/database/sqlite.workerd.ts",
       "bun": "./src/database/sqlite.bun.ts",
       "node": "./src/database/sqlite.node.ts",
       "default": "./src/database/sqlite.node.ts"
     },
     "#pty": {
+      "web": "./src/pty/pty.web.ts",
       "workerd": "./src/pty/pty.workerd.ts",
       "bun": "./src/pty/pty.bun.ts",
       "node": "./src/pty/pty.node.ts",
       "default": "./src/pty/pty.bun.ts"
     },
     "#claude-agent-sdk": {
+      "web": "./src/plugin/provider/claude-agent/claude/agent-sdk.web.ts",
       "workerd": "./src/plugin/provider/claude-agent/claude/agent-sdk.workerd.ts",
       "default": "./src/plugin/provider/claude-agent/claude/agent-sdk.ts"
     },
     "#persistent-pty-binary": {
+      "web": "./src/persistent-pty/binary.workerd.ts",
       "workerd": "./src/persistent-pty/binary.workerd.ts",
       "bun": "./src/persistent-pty/binary.bun.ts",
       "node": "./src/persistent-pty/binary.node.ts",
       "default": "./src/persistent-pty/binary.bun.ts"
     },
     "#fff": {
+      "web": "./src/filesystem/fff.workerd.ts",
       "workerd": "./src/filesystem/fff.workerd.ts",
       "bun": "./src/filesystem/fff.bun.ts",
       "node": "./src/filesystem/fff.node.ts",
       "default": "./src/filesystem/fff.bun.ts"
     },
     "#photon-wasm": {
+      "web": "./src/image/photon-wasm.workerd.ts",
       "workerd": "./src/image/photon-wasm.workerd.ts",
       "bun": "./src/image/photon-wasm.bun.ts",
       "node": "./src/image/photon-wasm.node.ts",
       "default": "./src/image/photon-wasm.bun.ts"
     },
     "#v1-migration": {
+      "web": "./src/database/v1-migration.web.ts",
       "types": "./src/database/v1-migration.bun.ts",
       "bun": "./src/database/v1-migration.bun.ts",
       "node": "./src/database/v1-migration.noop.ts",
