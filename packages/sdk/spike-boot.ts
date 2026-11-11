@@ -87,13 +87,11 @@ const program = Effect.gen(function* () {
   // Wait for the turn to finish: poll session status until idle
   for (let i = 0; i < 100; i++) {
     const info = yield* opencode.sessions.get({ sessionID: session.id })
-    const status = (info.data as { status?: { type?: string } | string })?.status
-    const type = typeof status === "string" ? status : status?.type
-    if (type === "idle" || type === "completed") {
-      console.log(`session status: ${type}`)
+    if (info.outcome !== undefined) {
+      console.log(`session outcome: ${info.outcome}`)
       break
     }
-    if (i === 99) console.log(`session status: ${JSON.stringify(status)} (timeout)`)
+    if (i === 99) console.log("session outcome: timeout")
     yield* Effect.sleep("100 millis")
   }
 
